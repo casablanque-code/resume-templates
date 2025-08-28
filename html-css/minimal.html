@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Резюме — Minimal</title>
+  <style>
+    :root{ --fg:#111; --muted:#555; }
+    *{ box-sizing:border-box; }
+    body{
+      font-family: -apple-system, Segoe UI, Roboto, Inter, Helvetica, Arial, sans-serif;
+      color: var(--fg);
+      margin: 0; padding: 32px;
+      line-height: 1.45;
+    }
+    h1{ font-size: 28px; margin: 0 0 4px; }
+    h2{ font-size: 16px; margin: 24px 0 8px; text-transform: uppercase; letter-spacing: .08em; }
+    .role{ font-weight:600; margin: 0 0 12px; }
+    .muted{ color: var(--muted); }
+    .divider{ height:1px; background:#ddd; margin:16px 0 12px; }
+    ul{ margin:6px 0 0 18px; }
+    .section{ margin-bottom: 12px; }
+    @media print{
+      body{ padding: 10mm; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Имя Фамилия</h1>
+    <div class="role">Backend Developer</div>
+    <div class="muted">📍 Город, Страна · 📧 email@example.com · 💻 github.com/username · linkedin.com/in/username</div>
+  </header>
+  <div class="divider"></div>
+
+  <section class="section">
+    <h2>О себе</h2>
+    <p>2–3 предложения: ключевая экспертиза, домены, стек, чем полезен компании.</p>
+  </section>
+
+  <section class="section">
+    <h2>Навыки</h2>
+    <ul>
+      <li>Java, Kotlin, Python</li>
+      <li>Spring Boot, Django, FastAPI</li>
+      <li>PostgreSQL, Redis, MongoDB</li>
+      <li>Docker, Kubernetes, Jenkins, Ansible</li>
+      <li>AWS, Yandex Cloud</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Опыт работы</h2>
+    <p><strong>Компания — Роль</strong> · <em>ММ.ГГГГ – наст. время</em></p>
+    <ul>
+      <li>Достижение с цифрами (например: «снизил p95 латентность на 30%»).</li>
+      <li>Технологии: Spring Boot, Kafka, Redis, PostgreSQL.</li>
+    </ul>
+    <p><strong>Компания — Роль</strong> · <em>ММ.ГГГГ – ММ.ГГГГ</em></p>
+    <ul>
+      <li>1–2 ключевых пункта.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Образование</h2>
+    <p><strong>ВУЗ, Город</strong> — Степень, Специальность, <em>ГГГГ</em></p>
+  </section>
+
+  <section class="section">
+    <h2>Проекты</h2>
+    <ul>
+      <li><strong>IT Ops Bot</strong> — Telegram-бот (Spring Boot + Supabase + Jenkins CI).</li>
+      <li><strong>StockIt App</strong> — Android-приложение (Kotlin + Supabase).</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Языки</h2>
+    <p>Русский — родной · Английский — B2</p>
+  </section>
+</body>
+</html>

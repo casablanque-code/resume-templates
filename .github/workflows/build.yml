@@ -1,0 +1,26 @@
+name: Build PDF Resume
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install pandoc + LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive-xetex
+
+      - name: Build PDFs
+        run: |
+          mkdir -p builds
+          # Добавляй сюда другие .md по мере появления
+          pandoc markdown/minimal.md -o builds/minimal.pdf --pdf-engine=xelatex -V geometry:margin=20mm
+
+      - name: Upload PDFs as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: resumes
+          path: builds/*.pdf
