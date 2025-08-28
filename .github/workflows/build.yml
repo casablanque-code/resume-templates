@@ -11,13 +11,19 @@ jobs:
       - name: Install pandoc + LaTeX
         run: |
           sudo apt-get update
-          sudo apt-get install -y pandoc texlive-xetex
+          sudo apt-get install -y pandoc texlive-xetex fonts-noto-core fonts-dejavu
+          fc-list | grep -i "noto\|dejavu" || true
 
       - name: Build PDFs
         run: |
           mkdir -p builds
-          # Добавляй сюда другие .md по мере появления
-          pandoc markdown/minimal.md -o builds/minimal.pdf --pdf-engine=xelatex -V geometry:margin=20mm
+          pandoc markdown/minimal.md \
+            -o builds/minimal.pdf \
+            --pdf-engine=xelatex \
+            -V mainfont="Noto Sans" \
+            -V geometry:margin=18mm \
+            -V fontsize=10pt \
+            -V colorlinks=false
 
       - name: Upload PDFs as artifact
         uses: actions/upload-artifact@v4
